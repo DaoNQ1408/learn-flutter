@@ -7,92 +7,52 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static List names = ["Mitch", "Sharon", "Vince"];
+
+  void userTapped() {
+    print("User tapped");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // home: Scaffold(
+      //   backgroundColor: Colors.deepPurple[200],
+      //   appBar: AppBar(
+      //     backgroundColor: Colors.deepPurple,
+      //     leading: Icon(Icons.menu),
+      //     actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+      //     title: Center(
+      //       child: Text(
+      //         "My App Bar",
+      //         style: TextStyle(
+      //           fontWeight: FontWeight.bold,
+      //           fontSize: 20,
+      //           color: Colors.white,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      //   body: GridView.builder(
+      //     itemCount: 64,
+      //     gridDelegate:
+      //         // how many grid in each row
+      //         SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+      //     itemBuilder: (context, index) =>
+      //         Container(color: Colors.deepOrange, margin: EdgeInsets.all(2)),
+      //   ),
+      // ),
       home: Scaffold(
-        backgroundColor: Colors.deepPurple[200],
-        appBar: AppBar(
-          backgroundColor: Colors.deepPurple,
-          leading: Icon(Icons.menu),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
-          title: Center(
-            child: Text(
-              "My App Bar",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
         body: Center(
-          child: Column(
-            children: [
-              // 1st container
-              Expanded(
-                child: Container(
-                  height: 300,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple[400],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: EdgeInsets.all(25),
-                  child: Text(
-                    "DaoNQ1408",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              // 2nd container
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: 300,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple[600],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: EdgeInsets.all(25),
-                  child: Text(
-                    "DaoNQ1408",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              // 3rd container
-              Expanded(
-                child: Container(
-                  height: 300,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple[800],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: EdgeInsets.all(25),
-                  child: Text(
-                    "DaoNQ1408",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          child: GestureDetector(
+            onTap: userTapped,
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.deepPurple[200],
+              child: Center(child: Text("tap me")),
+            ),
           ),
         ),
       ),
