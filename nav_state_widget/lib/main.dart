@@ -1,3 +1,6 @@
+import 'package:first_prj/pages/first_page.dart';
+import 'package:first_prj/pages/home_page.dart';
+import 'package:first_prj/pages/setting_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,45 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: Scaffold(
-      //   backgroundColor: Colors.deepPurple[200],
-      //   appBar: AppBar(
-      //     backgroundColor: Colors.deepPurple,
-      //     leading: Icon(Icons.menu),
-      //     actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
-      //     title: Center(
-      //       child: Text(
-      //         "My App Bar",
-      //         style: TextStyle(
-      //           fontWeight: FontWeight.bold,
-      //           fontSize: 20,
-      //           color: Colors.white,
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      //   body: GridView.builder(
-      //     itemCount: 64,
-      //     gridDelegate:
-      //         // how many grid in each row
-      //         SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
-      //     itemBuilder: (context, index) =>
-      //         Container(color: Colors.deepOrange, margin: EdgeInsets.all(2)),
-      //   ),
-      // ),
-      home: Scaffold(
-        body: Center(
-          child: GestureDetector(
-            onTap: userTapped,
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.deepPurple[200],
-              child: Center(child: Text("tap me")),
-            ),
-          ),
-        ),
-      ),
+      home: FirstPage(),
+      routes: {
+        '/firstpage': (context) => FirstPage(),
+        '/home': (context) => HomePage(),
+        '/setting': (context) => SettingPage(),
+      },
     );
   }
 }
